@@ -1,0 +1,15 @@
+zerops:
+  - setup: web
+    build:
+      base: nodejs@20
+      buildCommands:
+        - bun i
+        - bun run build
+      deployFiles: ./
+    run:
+      base: nodejs@20
+      envVariables
+      ports:
+        - port: 3000
+          httpSupport: true
+      start: bun run server.js
