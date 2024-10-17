@@ -8,7 +8,8 @@ zerops:
       deployFiles: ./
     run:
       base: nodejs@20
-      envVariables
+      envVariables:
+        DATABASE_URL: postgresql://${user}:${password}@${hostname}:${port}
       ports:
         - port: 3000
           httpSupport: true
